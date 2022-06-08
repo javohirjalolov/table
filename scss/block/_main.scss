@@ -5,3 +5,39 @@ table , th ,td{
   text-align: center;
   padding: 10px;
 }
+
+
+
+  .box{
+    position: relative;
+    width: 250px;
+    background-color: rgb(124, 218, 124);
+    margin-left: 50px;
+    padding: 10px;
+    margin-top: 50px;
+  
+    &::before,  &::after{
+      content: "";
+      display: inline-block;
+      top: 0;
+      background: transparent;
+      position: absolute;
+      border-top: 10px solid rgb(124, 218, 124);
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      z-index: -1;
+    }
+  
+    &--badge-left::before{
+      right: 100%;
+      transform: translateX(50%);
+      justify-content: flex-start;
+    }
+  
+    &--badge-right::after{
+      left: 100%;
+      transform: translateX(-50%);
+      justify-content: flex-end;
+    }
+  }
